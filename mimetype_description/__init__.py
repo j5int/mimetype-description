@@ -1,4 +1,7 @@
-import importlib.resources as pkg_resources
+try:
+    import importlib.resources as pkg_resources
+except ImportError:
+    import pkg_resources
 import xml.etree.ElementTree
 
 
