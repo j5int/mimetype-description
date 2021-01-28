@@ -1,7 +1,9 @@
 try:
     import importlib.resources as pkg_resources
+    read_pkg_text = pkg_resources.read_text
 except ImportError:
     import pkg_resources
+    read_pkg_text = pkg_resources.resource_string
 import xml.etree.ElementTree
 
 
@@ -12,7 +14,7 @@ class MimeTypeDescription:
     def __init__(self):
         lang_attr = '{http://www.w3.org/XML/1998/namespace}lang'
         shared_mime_info = '{http://www.freedesktop.org/standards/shared-mime-info}'
-        data = pkg_resources.read_text(__package__, 'freedesktop.org.xml')
+        data = read_pkg_text(__package__, 'freedesktop.org.xml')
         root = xml.etree.ElementTree.fromstring(data)
 
         for mime_type in root:
