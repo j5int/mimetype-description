@@ -10,7 +10,7 @@ setup(
     url="https://github.com/chesstrian/mimetype-description",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    version="0.0.5",
+    version="0.0.5+j5.1",
     author="Christian Gutierrez",
     author_email="chesstrian@gmail.com",
     packages=find_packages(),
